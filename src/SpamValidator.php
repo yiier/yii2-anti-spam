@@ -5,11 +5,10 @@
  * description:
  */
 
-namespace yier\antiSpam;
+namespace yiier\antiSpam;
 
 use yii\validators\Validator;
 use yiier\antiSpam\models\Spam;
-
 
 class SpamValidator extends Validator
 {
@@ -99,8 +98,8 @@ class SpamValidator extends Validator
     public static function stringContains($rule, $data)
     {
         $key = preg_replace("/(\S+)\{(\d+)\}(\S+)/i", "$1.{0,$2}$3", $rule);
-        preg_match_all("/($key)/i", $data, $match);
-        if (empty($match[0])) {
+        preg_match_all("($key)", $data, $match);
+        if (!empty($match[0]) && count($match[0])) {
             return true;
         }
         return false;

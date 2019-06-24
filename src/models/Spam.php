@@ -26,12 +26,12 @@ class Spam extends \yii\db\ActiveRecord
     /**
      * @var string contains
      */
-    const TYPE_CONTAINS = 1;
+    const TYPE_CONTAINS = 'contains';
 
     /**
      * @var string similar
      */
-    const TYPE_SIMILAR = 2;
+    const TYPE_SIMILAR = 'similar';
 
 
     /**
