@@ -52,8 +52,8 @@ class Spam extends \yii\db\ActiveRecord
             [['content'], 'required'],
             [['content'], 'string'],
             [['type', 'for'], 'string', 'max' => 20],
-            [['status'], 'in' => [self::STATUS_ACTIVE, self::STATUS_UNACTIVATED]],
-            [['type'], 'in' => [self::TYPE_SIMILAR, self::TYPE_CONTAINS]],
+            [['status'], 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_UNACTIVATED]],
+            [['type'], 'in', 'range' => [self::TYPE_SIMILAR, self::TYPE_CONTAINS]],
         ];
     }
 
